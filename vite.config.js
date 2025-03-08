@@ -1,14 +1,21 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import tailwindcss from 'tailwindcss'; // Import TailwindCSS plugin
+import autoprefixer from 'autoprefixer';
 
 export default defineConfig({
-  plugins: [react(),tailwindcss()],
-  base: './', // Ensures correct asset paths on Vercel
+  plugins: [react()],
+  css: {
+    postcss: {
+      plugins: [tailwindcss(), autoprefixer()], // Ensure Tailwind works
+    },
+  },
+  base: './', // Fix asset paths on Vercel
   build: {
     outDir: 'dist',
   },
   server: {
-    open: true, // Opens browser when running `vite`
+    open: true, // Open browser on dev
   },
   resolve: {
     alias: {
