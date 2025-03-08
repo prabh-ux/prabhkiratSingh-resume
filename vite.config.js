@@ -1,25 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import tailwindcss from 'tailwindcss'; // Import TailwindCSS plugin
-import autoprefixer from 'autoprefixer';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  plugins: [react()],
-  css: {
-    postcss: {
-      plugins: [tailwindcss(), autoprefixer()], // Ensure Tailwind works
-    },
-  },
-  base: './', // Fix asset paths on Vercel
-  build: {
-    outDir: 'dist',
-  },
+  plugins: [react(), tailwindcss()],
   server: {
-    open: true, // Open browser on dev
-  },
-  resolve: {
-    alias: {
-      '@': '/src', // Optional: Shorter imports
-    },
-  },
+    historyApiFallback: true, // Fixes 404 issue on page refresh
+  }
 });
