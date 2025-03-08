@@ -1,10 +1,18 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react()],
+  base: './', // Ensures correct asset paths on Vercel
+  build: {
+    outDir: 'dist',
+  },
   server: {
-    historyApiFallback: true, // Fixes 404 issue on page refresh
-  }
+    open: true, // Opens browser when running `vite`
+  },
+  resolve: {
+    alias: {
+      '@': '/src', // Optional: Shorter imports
+    },
+  },
 });
