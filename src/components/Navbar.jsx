@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Navbar = () => {
     const [menuActive, setMenuActive] = useState(false);
@@ -8,11 +8,11 @@ const Navbar = () => {
             {/* Name and proffesion */}
             <div className='flex flex-row  items-center gap-[0.5rem]  '>
                 <div className='bg-[#606C38] h-[20px] w-[20px]'></div>
-                <div className='h-fit w-fit'>
+                <Link to="/" className='h-fit w-fit'>
                     <span className='text-black text-xl font-bold' >Prabhkirat Singh</span>
                     <span className=' hover:underline underline-offset-4 decoration-2 transition-all ease-in-out duration-300  text-black text-sm' >/DESIGNER & DEVLOPER</span>
 
-                </div>
+                </Link>
             </div>
 
             {/* navmenu*/}

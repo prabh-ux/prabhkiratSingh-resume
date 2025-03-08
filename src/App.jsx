@@ -8,7 +8,7 @@ import Resume from './pages/Resume';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import BacktoTopbtn from './components/BacktoTopbtn';
-
+import Error from './pages/Error';
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
         <Route path="/resume" element={<Resume/>} />
         <Route path="/myprojects" element={ <Projects/>} />
         <Route path="/mycontact" element={ <Contact/>} />
+        <Route path="*" element={<Error/>} /> {/* Catch-all for 404 */}
       </Routes>
       <BacktoTopbtn></BacktoTopbtn>
      < Footer></Footer> 
