@@ -7,7 +7,8 @@ import PasswordPrompt from '../components/PasswordPrompt';
 
 const Contact = () => {
     const notify = () => toast('Here is your toast.');
-     const apiKey = process.env.REACT_APP_BREVO_API_KEY;
+     const apiKey = import.meta.env.VITE_BREVO_API_KEY;
+     ;
 
 
     const [mailSending, setMailSending] = useState(false);
