@@ -30,7 +30,13 @@ const Contact = () => {
         e.preventDefault();
         setMailSending(true);
        let pass= prompt("🔒 Secret Access Required Only the chosen ones know the pass! (Hint: Prabh told you 😉)");
-        if(pass.toLowerCase()==="reena"){
+       if(pass===null){
+        setMailSending(false);
+        return;
+       }
+       
+       
+       if(pass.toLowerCase()==="reena"){
             
             toast.success("🎉 Whoa! You got it! Sending your email to Prabhkirat Singh...");
             handelMail();
