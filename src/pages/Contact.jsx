@@ -8,7 +8,7 @@ import PasswordPrompt from '../components/PasswordPrompt';
 const Contact = () => {
     const notify = () => toast('Here is your toast.');
     const apiKey = import.meta.env.VITE_BREVO_API_KEY;
-    console.log("API Key:", apiKey); // Debugging
+    
     
      
 
