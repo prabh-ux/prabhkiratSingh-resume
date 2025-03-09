@@ -7,8 +7,10 @@ import PasswordPrompt from '../components/PasswordPrompt';
 
 const Contact = () => {
     const notify = () => toast('Here is your toast.');
-     const apiKey = import.meta.env.VITE_BREVO_API_KEY;
-     ;
+    const apiKey = import.meta.env.VITE_BREVO_API_KEY;
+    console.log("API Key:", apiKey); // Debugging
+    
+     
 
 
     const [mailSending, setMailSending] = useState(false);
@@ -45,7 +47,7 @@ const Contact = () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "api-key": {apiKey},  // Replace with your Brevo API key
+                "api-key": apiKey,  // Replace with your Brevo API key
             },
             body: JSON.stringify({
                 sender: { 
